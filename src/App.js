@@ -1,25 +1,51 @@
-import logo from './logo.svg';
 import './App.css';
-
 function App() {
+
+
+
+
+
+  const names = [
+    { name: 'Ayyasamy', id: 1 },
+    { name: 'Mohan', id: 2 },
+    { name: 'Munna', id: 3 },
+    { name: 'Monu', id: 4 },
+    { name: 'Tamil', id: 5 },
+  ]
+
+
+
+
+
+  function show(data) {
+    console.log(`${data} has been chosen as a team member`);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div>
+        <table className='tab'>
+          <thead>
+            <tr>
+              <th>Sr no</th>
+              <th>id</th>
+              <th>name</th>
+              <th>action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {names.map((item, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td><button className='btn' onClick={() => show(item.name)}>click</button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  )
 }
 
 export default App;
