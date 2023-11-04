@@ -1,4 +1,6 @@
 import './App.css';
+import './vehicle/vehicle'
+import Vehicle from './vehicle/vehicle';
 function App() {
 
 
@@ -44,6 +46,7 @@ function App() {
           </tbody>
         </table>
       </div>
+       <Vehicle/>
     </>
   )
 }
