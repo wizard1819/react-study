@@ -1,54 +1,21 @@
 import './App.css';
-import './vehicle/vehicle'
-import Vehicle from './vehicle/vehicle';
+import './vehicle/vehicle';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './vehicle/layout';
+import Ford from './vehicle/test';
+import Home from './vehicle/home';
 function App() {
 
-
-
-
-
-  const names = [
-    { name: 'Ayyasamy', id: 1 },
-    { name: 'Mohan', id: 2 },
-    { name: 'Munna', id: 3 },
-    { name: 'Monu', id: 4 },
-    { name: 'Tamil', id: 5 },
-  ]
-
-
-
-
-
-  function show(data) {
-    console.log(`${data} has been chosen as a team member`);
-  }
   return (
-    <>
-      <div>
-        <table className='tab'>
-          <thead>
-            <tr>
-              <th>Sr no</th>
-              <th>id</th>
-              <th>name</th>
-              <th>action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {names.map((item, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td><button className='btn' onClick={() => show(item.name)}>click</button></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-       <Vehicle/>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path='home'  element={<Home />} />
+          <Route path='ford' element={<Ford />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
