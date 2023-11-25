@@ -1,8 +1,20 @@
+import { useEffect } from 'react';
+import './home.css'
 
-function Home(){
-    return(
+function Home() {
+
+    useEffect(()=>{
+        let date = new Date();
+        console.log(date);
+    })
+   
+
+    return (
         <>
-        hello
+            <div>
+                <h1 className='head'>Hello , Welcome Home</h1>
+            </div>
+          
         </>
     )
 }
